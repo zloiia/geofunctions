@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+from math import ceil
 def fromFloatToString(deg, htlm = True, repldots = True):
+	deg = float(deg)
 	floatPart = float(deg) - int(deg)
 	minsec = floatPart * 60
 	if htlm:
@@ -10,4 +12,8 @@ def fromFloatToString(deg, htlm = True, repldots = True):
 		return res.replace('.',',')
 	return res
 
-print fromFloatToString(55.547000)
+def fromFloatToList(deg):
+	deg = float(deg)
+	floatPart = float(deg) - int(deg)
+	minsec = floatPart * 60
+	return ( int(deg), int(minsec), int(ceil((minsec-int(minsec))*100)) )
