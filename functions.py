@@ -7,7 +7,7 @@ def fromFloatToString(deg, htlm = True, repldots = True):
 	if htlm:
 		res = "%d&deg %s'"%( int(deg), "{:.2f}".format(minsec))
 	else:
-		res = "%d deg %s"%( int(deg), "{:10.2f}".format(minsec))
+		res = "%d %s"%( int(deg), "{:10.2f}".format(minsec))
 	if repldots:
 		return res.replace('.',',')
 	return res
